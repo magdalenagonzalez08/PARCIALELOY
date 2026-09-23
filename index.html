@@ -76,6 +76,14 @@ body{
   width:11px; height:11px; border-radius:4px; background:var(--accent);
   box-shadow:0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
 }
+.presenter-tag{
+  position:absolute; top:22px; right:28px; z-index:3;
+  font-family:'JetBrains Mono', monospace; font-size:0.72rem; font-weight:700;
+  padding:0.32rem 0.75rem; border-radius:999px;
+  background: color-mix(in srgb, var(--accent) 12%, white);
+  border:1.5px solid var(--accent); color:var(--accent-deep);
+  box-shadow: var(--shadow);
+}
 
 h1.title{
   font-size:2.05rem; font-weight:800; margin:0 0 0.5rem 0; line-height:1.15;
@@ -266,6 +274,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 
   <!-- SLIDE 1: Título -->
   <section class="slide active title-slide" style="--accent:#2f8fff; --accent-deep:#1c5fd6;">
+    <div class="presenter-tag">Presenta: Jair</div>
     <div class="blob b1"></div><div class="blob b2"></div>
     <div class="logo-row">
       <img src="assets/logo_utp.jpg" alt="Logo Universidad Tecnológica de Panamá">
@@ -278,10 +287,10 @@ table.truth tr:last-child td{ border-bottom:none; }
     <p class="subtitle" style="margin:0 auto; text-align:center;">EasyEDA, control de motores con puente H y sensor ultrasónico de distancia.</p>
     <div class="prof-line">Docente: Lezcano Eloy · Sistemas Embebidos · Segundo Semestre 2026</div>
     <div class="badge-row">
-      <span class="member">Magdalena González</span>
-      <span class="member">Jair Jiménez</span>
-      <span class="member">Pedro Valdés</span>
-      <span class="member">Zaid Morales</span>
+      <span class="member">Magdalena González · 4-819-1590</span>
+      <span class="member">Jair Jiménez · 4-835-1794</span>
+      <span class="member">Pedro Valdés · 4-839-1747</span>
+      <span class="member">Zaid Morales · 4-827-2397</span>
     </div>
     <div class="ic-row">
       <div class="ic i1">🧩</div><div class="ic i2">🔀</div><div class="ic i3">📏</div><div class="ic i4">🚗</div>
@@ -290,6 +299,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 
   <!-- SLIDE 2: Semana 1 - investigación -->
   <section class="slide" style="--accent:#9b5cff; --accent-deep:#7b3fdb;">
+    <div class="presenter-tag">Presenta: Jair</div>
     <div class="eyebrow"><span class="chip"></span> SEMANA 1 · CÓMO EMPEZÓ TODO</div>
     <h1 class="title">Investigar antes de tocar cualquier componente</h1>
     <p class="subtitle">La primera semana del semestre fue de investigación pura: elegir un proyecto y aprender la herramienta de diseño, antes de armar nada físico.</p>
@@ -311,6 +321,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 
   <!-- SLIDE 2b: Sensor y LEDs (práctica previa) -->
   <section class="slide" style="--accent:#12c48b; --accent-deep:#0a9c6f;">
+    <div class="presenter-tag">Presenta: Pedro</div>
     <div class="eyebrow"><span class="chip"></span> ANTES DEL PARCIAL</div>
     <h1 class="title">La primera práctica: sensor con cuatro LEDs</h1>
     <div class="content">
@@ -334,8 +345,46 @@ table.truth tr:last-child td{ border-bottom:none; }
     </div>
   </section>
 
+  <!-- SLIDE NUEVA A: Video de la práctica con LEDs -->
+  <section class="slide" style="--accent:#12c48b; --accent-deep:#0a9c6f;">
+    <div class="presenter-tag">Presenta: Magdalena</div>
+    <div class="eyebrow"><span class="chip"></span> EVIDENCIA EN VIDEO</div>
+    <h1 class="title">Video: los LEDs reaccionando a la distancia</h1>
+    <div class="content">
+      <div class="col">
+        <video class="evidence" style="max-height:52vh; cursor:default;" controls playsinline>
+          <source src="assets/video_leds.mp4" type="video/mp4">
+          Tu navegador no puede reproducir este video.
+        </video>
+        <div class="figcap">Prueba real: cada LED se enciende según qué tan cerca está el objeto del sensor</div>
+      </div>
+      <div class="col card">
+        <h3>Lo que se ve en el video</h3>
+        <p class="lede">Al acercar la mano al sensor, los LEDs van cambiando uno por uno, del más lejos al más cerca, confirmando que la lógica de umbrales del código sí se reflejaba en tiempo real sobre el hardware, no solo en el monitor serial.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE NUEVA B: Sensor y pinout del L293D -->
+  <section class="slide" style="--accent:#12c48b; --accent-deep:#0a9c6f;">
+    <div class="presenter-tag">Presenta: Magdalena</div>
+    <div class="eyebrow"><span class="chip"></span> REFERENCIA TÉCNICA</div>
+    <h1 class="title">El sensor de cerca y el mapa de pines del L293D</h1>
+    <div class="content">
+      <div class="col">
+        <img class="evidence" src="assets/sensor.jpg" alt="Sensor HC-SR04 de cerca">
+        <div class="figcap">El sensor ultrasónico HC-SR04 que usamos en el carrito</div>
+      </div>
+      <div class="col">
+        <img class="evidence" src="assets/L293D-pinout-1.webp" alt="Pinout del L293D">
+        <div class="figcap">Mapa de pines del L293D — la referencia que usamos para no cablear nada al revés</div>
+      </div>
+    </div>
+  </section>
+
   <!-- SLIDE 3: Consigna -->
   <section class="slide" style="--accent:#2f8fff; --accent-deep:#1c5fd6;">
+    <div class="presenter-tag">Presenta: Jair</div>
     <div class="eyebrow"><span class="chip"></span> LO QUE PIDIÓ EL PROFESOR</div>
     <h1 class="title">Tres tareas, integradas en un solo vehículo</h1>
     <p class="subtitle">La consigna del parcial pedía diseñar en EasyEDA, controlar motores con puente H y calcular distancia horizontal/vertical, para aplicarlo a una plataforma móvil que evada obstáculos.</p>
@@ -349,6 +398,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 
   <!-- SLIDE 3: Objetivos -->
   <section class="slide" style="--accent:#2f8fff; --accent-deep:#1c5fd6;">
+    <div class="presenter-tag">Presenta: Jair</div>
     <div class="eyebrow"><span class="chip"></span> OBJETIVOS DEL EQUIPO</div>
     <h1 class="title">De la consigna a un plan de trabajo</h1>
     <div class="content">
@@ -370,6 +420,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 
   <!-- SLIDE 4: EasyEDA -->
   <section class="slide" style="--accent:#2f8fff; --accent-deep:#1c5fd6;">
+    <div class="presenter-tag">Presenta: Magdalena</div>
     <div class="eyebrow"><span class="chip"></span> 1 · DISEÑO EN EASYEDA</div>
     <h1 class="title">Tres bloques funcionales en un mismo esquemático</h1>
     <div class="content">
@@ -391,6 +442,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 
   <!-- SLIDE 5: Puente H -->
   <section class="slide" style="--accent:#ff7a3d; --accent-deep:#c65a1f;">
+    <div class="presenter-tag">Presenta: Magdalena</div>
     <div class="eyebrow"><span class="chip"></span> 2 · CONTROL DE MOTORES</div>
     <h1 class="title">El puente H: girar sin invertir un solo cable</h1>
     <div class="content">
@@ -413,6 +465,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 
   <!-- SLIDE 6: Sensor + código -->
   <section class="slide" style="--accent:#12c48b; --accent-deep:#0a9c6f;">
+    <div class="presenter-tag">Presenta: Pedro</div>
     <div class="eyebrow"><span class="chip"></span> 3 · SENSOR DE DISTANCIA</div>
     <h1 class="title">De un eco ultrasónico a una decisión de movimiento</h1>
     <div class="content">
@@ -440,6 +493,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 
   <!-- SLIDE 7: Alimentación y GND -->
   <section class="slide" style="--accent:#ff5d8f; --accent-deep:#c23568;">
+    <div class="presenter-tag">Presenta: Pedro</div>
     <div class="eyebrow"><span class="chip"></span> LA PARTE QUE MÁS NOS COSTÓ</div>
     <h1 class="title">Alimentación y tierra común: la lección técnica del parcial</h1>
     <div class="content">
@@ -461,6 +515,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 
   <!-- SLIDE 8: Pruebas -->
   <section class="slide" style="--accent:#2f8fff; --accent-deep:#1c5fd6;">
+    <div class="presenter-tag">Presenta: Zaid</div>
     <div class="eyebrow"><span class="chip"></span> VALIDACIÓN</div>
     <h1 class="title">Simulación primero, hardware real después</h1>
     <div class="content">
@@ -477,6 +532,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 
   <!-- SLIDE 9: Lo que sí funcionó -->
   <section class="slide" style="--accent:#12c48b; --accent-deep:#0a9c6f;">
+    <div class="presenter-tag">Presenta: Zaid</div>
     <div class="eyebrow"><span class="chip"></span> RESULTADO</div>
     <h1 class="title">Con el sensor frontal, el vehículo evadió obstáculos solo</h1>
     <div class="content">
@@ -494,6 +550,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 
   <!-- SLIDE 10b: Carrito - velocidad ajustable -->
   <section class="slide" style="--accent:#2f8fff; --accent-deep:#1c5fd6;">
+    <div class="presenter-tag">Presenta: Magdalena</div>
     <div class="eyebrow"><span class="chip"></span> MEJORA AL CARRITO</div>
     <h1 class="title">Ahora los motores pueden ir más lento</h1>
     <div class="content">
@@ -519,6 +576,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 
   <!-- SLIDE 10c: Carrito - dos sensores -->
   <section class="slide" style="--accent:#12c48b; --accent-deep:#0a9c6f;">
+    <div class="presenter-tag">Presenta: Pedro</div>
     <div class="eyebrow"><span class="chip"></span> MEJORA AL CARRITO</div>
     <h1 class="title">Un sensor adelante y otro atrás</h1>
     <div class="content">
@@ -543,6 +601,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 
   <!-- SLIDE 10: Lo que quedó pendiente -->
   <section class="slide" style="--accent:#9b5cff; --accent-deep:#7b3fdb;">
+    <div class="presenter-tag">Presenta: Zaid</div>
     <div class="eyebrow"><span class="chip"></span> ALCANCE Y LIMITACIONES</div>
     <h1 class="title">El plan era ir más allá de un solo sensor</h1>
     <div class="content">
@@ -560,6 +619,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 
   <!-- SLIDE 10d: Próximos pasos -->
   <section class="slide" style="--accent:#ffc73c; --accent-deep:#a17a00;">
+    <div class="presenter-tag">Presenta: Zaid</div>
     <div class="eyebrow"><span class="chip"></span> LO QUE SIGUE</div>
     <h1 class="title">Del código a probarlo rodando de verdad</h1>
     <div class="content">
@@ -580,6 +640,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 
   <!-- SLIDE 11: Conclusiones -->
   <section class="slide" style="--accent:#ff5d8f; --accent-deep:#c23568;">
+    <div class="presenter-tag">Presentan: Todos</div>
     <div class="eyebrow"><span class="chip"></span> PARA CERRAR</div>
     <h1 class="title">Qué nos deja este parcial</h1>
     <div class="content">
@@ -612,7 +673,7 @@ table.truth tr:last-child td{ border-bottom:none; }
 <div class="hud">
   <button class="navbtn" onclick="go(-1)">← Anterior</button>
   <div class="dots" id="dots"></div>
-  <span class="counter" id="counter">1 / 16</span>
+  <span class="counter" id="counter">1 / 18</span>
   <button class="navbtn" onclick="go(1)">Siguiente →</button>
 </div>
 
